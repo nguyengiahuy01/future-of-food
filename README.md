@@ -11,3 +11,7 @@
 
 Trong mỗi vòng sẽ bầu ra 1 người có lối sống không lành mạnh đang làm ảnh hưởng chung của trái đất.
 Và nếu người đó bị chọn, họ sẽ out khỏi cuộc chơi
+# future-of-food
+
+Edith, Burhan, Huys
+Test
