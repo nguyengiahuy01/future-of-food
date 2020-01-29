@@ -32,11 +32,10 @@ app.use('/game', require('./routes/game/')(config, models))
 app.use('/user', require('./routes/user/'))
 app.use('/', require('./routes/')(config, models))
 // Authorization __________________________________
+
 // Step for Authorization
 app.use(require('./routes/auth')(config, models))
 
-// Private requests _______________________________
-app.use('/ai', require('./routes/ai/')(models, config))
 // catch 404 and forward to error handler__________
 app.use(function(req, res, next) {
   next(createError(404));
