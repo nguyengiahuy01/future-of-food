@@ -8,7 +8,6 @@ const player = sequelize.define(`player`, {
       primaryKey: true
     },
     name: Sequelize.STRING(255),
-    role: Sequelize.INTEGER,
     ready: Sequelize.BOOLEAN,
     online: Sequelize.BOOLEAN, // Ob der Nutzer noch bleibt
     onGame: Sequelize.BOOLEAN, // Ob der Nutzer noch nicht gewählt wird

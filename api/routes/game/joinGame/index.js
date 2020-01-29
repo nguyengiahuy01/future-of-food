@@ -6,7 +6,6 @@ async function main (req, res, models) {
     const time = new Date().toLocaleString()
     const id = await bcrypt.hash(name + time, 5)// 5 -> config.security.saltRounds
     const boardId = await checkEmptyBoard(models) // Check empty board
-    const role = 0
     // Create new Player
     await models.game.player.create({
       id,
@@ -15,7 +14,6 @@ async function main (req, res, models) {
       online: true,
       onGame: true,
       joinBoard: false,
-      role,
       boardId
     })
     res.end(JSON.stringify({ id }))

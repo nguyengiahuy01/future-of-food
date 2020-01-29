@@ -6,7 +6,7 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'start', component: () => import('pages/stream/1-start') },
-      { path: 'set-role', component: () => import('pages/stream/2-choose-role') },
+      { path: 'introdution', component: () => import('pages/stream/2-introdution') },
       { path: 'in-game', component: () => import('pages/stream/3-in-game') }
     ]
   }
