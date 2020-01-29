@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
-    <img id="loading" src="~assets/island-grey.svg" class="center" style="width: 400px; align: center"><br>
+    <img src="~assets/island-grey.svg" id="loading" class="center" style="width: 400px; align: center"><br>
     <q-form>
       <q-input
         rounded outlined
