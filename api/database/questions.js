@@ -1,29 +1,29 @@
 module.exports = [
   {
     id: 1,
-    question: '',
+    question: "how are you",
     group: 0,
     answers: {
-      0: '',
-      1: ''
+      0: "im fine",
+      1: "im not good"
     }
   },
   {
     id: 2,
-    question: '',
+    question: "",
     group: 0,
     answers: {
-      0: '',
-      1: ''
+      0: "",
+      1: ""
     }
   },
   {
     id: 3,
-    question: '',
-    group: 0,
+    question: "",
+    group: 2,
     answers: {
-      0: '',
-      1: ''
+      0: "",
+      1: ""
     }
   }
-]
+];
