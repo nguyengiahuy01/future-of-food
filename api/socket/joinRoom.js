@@ -16,14 +16,12 @@ module.exports = async function joinRoom (socket, models, id) {
   socket.broadcast.emit('join-room/update-friend', players)
   // 3. When All Player are there
   if (players.length === 5) {
-    let i = 1
     for (const player of players) {
       // Give Players roles, and set onGame to true
       await models.game.player.update(
-        { role: i, onGame: true },
+        { onGame: true },
         { where: { boardId, id: player.id }}
       )
-      i += 1
     }
     socket.emit('join-room/ready', boardId)
     socket.broadcast.emit('join-room/ready', boardId)
