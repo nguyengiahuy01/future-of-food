@@ -7,8 +7,7 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'start', component: () => import('pages/stream/1-start') },
       { path: 'set-role', component: () => import('pages/stream/2-choose-role') },
-      { path: 'in-game', component: () => import('pages/stream/3-in-game') },
-      { path: 'test', component: () => import('pages/test') }
+      { path: 'in-game', component: () => import('pages/stream/3-in-game') }
     ]
   }
 ]

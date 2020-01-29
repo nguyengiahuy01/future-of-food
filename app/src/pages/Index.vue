@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div class="q-pa-md" style="max-width: 400px">
-    <img id="loading" src="~assets/island-grey.svg" class="cute center" style="align: center"><br>
+    <img id="loading" src="~assets/island-grey.svg" class="center" style="width: 400px; align: center"><br>
     <q-form>
       <q-input
         rounded outlined
@@ -42,17 +42,4 @@ export default {
 }
 </script>
 <style>
-#loading {
-  -webkit-animation: rotation 5s infinite linear;
-}
-@-webkit-keyframes rotation {
-  from {-webkit-transform: rotate(0deg);}
-  to {-webkit-transform: rotate(359deg);}
-}
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 </style>
