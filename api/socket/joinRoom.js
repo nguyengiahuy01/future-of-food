@@ -1,4 +1,4 @@
-async function joinRoom (socket, models, id) {
+module.exports = async function joinRoom (socket, models, id) {
   // When someone come into game, he bringt id
   // 1. Get Player 's Information
   const player = await models.game.player.findOne({
@@ -15,7 +15,7 @@ async function joinRoom (socket, models, id) {
   socket.emit('join-room/update-myself', players) // Phai dat ten de tranh nham lan voi in-game
   socket.broadcast.emit('join-room/update-friend', players)
   // 3. When All Player are there
-  if (players.length === 9) {
+  if (players.length === 5) {
     let i = 1
     for (const player of players) {
       // Give Players roles, and set onGame to true
@@ -29,4 +29,3 @@ async function joinRoom (socket, models, id) {
     socket.broadcast.emit('join-room/ready', boardId)
   }
 }
-module.exports = joinRoom
