@@ -11,4 +11,3 @@ const socket = function (io, models) {
   })
 }
 module.exports = socket
-
