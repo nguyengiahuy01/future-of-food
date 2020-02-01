@@ -26,7 +26,7 @@
           v-if="name != ''"
           style="width: 100%"
         />
-        <q-btn label="Jetzt spielen" color="primary" disabled v-else style="width: 100%" />
+        <q-btn label="Jetzt spielen" color="primary" disabled v-else style="width: 100%"/>
       </q-form>
       <br />
     </div>

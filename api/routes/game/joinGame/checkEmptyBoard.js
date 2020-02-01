@@ -20,7 +20,7 @@ async function checkEmptyBoard (models) {
     const id = checkEmptyBoard.id
     let start = false // Default value
     const playersTotal = checkEmptyBoard.playersTotal + 1 // Add new value into summe
-    if (playersTotal === 9) {
+    if (playersTotal === 5) {
       // If there 're enough players, ser value start = true
       start = true
     }

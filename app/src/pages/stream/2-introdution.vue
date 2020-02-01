@@ -1,5 +1,6 @@
 <template>
   <q-page class="flex flex-center">
+    <div class="q-pa-md" style="max-width: 400px">
      <q-carousel
         v-model="slide"
         transition-prev="scale"
@@ -32,6 +33,10 @@
         </q-carousel-slide>
         <!-- end -->
       </q-carousel>
+      <h6 class="q-mt-md text-center">{{ players }}/5</h6>
+      <q-btn v-if="bereit" label="Ich bin bereits" color="primary" style="width: 100%" disabled/>
+      <q-btn v-else label="Ich bin bereits" color="primary" style="width: 100%" @click="confirm()"/>
+    </div>
   </q-page>
 </template>
 <script>
@@ -41,6 +46,8 @@ export default {
     return {
       myself: {},
       slide: 'style',
+      players: 0,
+      bereit: false,
       text1: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. dfdsfsdf',
       text2: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
       text3: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
@@ -53,6 +60,13 @@ export default {
       })).data
     } catch (error) {
       this.$notify(error)
+    }
+  },
+  methods: {
+    confirm () {
+      this.bereit = true
+      const id = this.$route.query.id
+      this.$socket.emit('confirm', id)
     }
   }
 }
