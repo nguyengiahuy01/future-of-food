@@ -18,7 +18,6 @@ async function main (req, res, models) {
     })
     res.end(JSON.stringify({ id }))
   } catch (error) {
-    console.log(error)
     res.status(400).end()
   }
 }

@@ -33,7 +33,7 @@
         </q-carousel-slide>
         <!-- end -->
       </q-carousel>
-      <h6 class="q-mt-md text-center">{{ players }}/5</h6>
+      <h6 class="q-mt-md text-center">{{ $store.state.showcase.ready }}/5</h6>
       <q-btn v-if="bereit" label="Ich bin bereits" color="primary" style="width: 100%" disabled/>
       <q-btn v-else label="Ich bin bereits" color="primary" style="width: 100%" @click="confirm()"/>
     </div>
@@ -44,9 +44,7 @@ export default {
   name: 'chooseRole',
   data () {
     return {
-      myself: {},
       slide: 'style',
-      players: 0,
       bereit: false,
       text1: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. dfdsfsdf',
       text2: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
@@ -54,19 +52,22 @@ export default {
     }
   },
   async mounted () {
-    try {
-      this.myself = (await this.$api.patch('/game/myself', {
-        id: this.$route.query.id
-      })).data
-    } catch (error) {
-      this.$notify(error)
-    }
+    this.$socket.on(`ready`, data => {
+      this.$store.state.showcase.ready = data
+    })
+    this.$socket.on('next', () => {
+      this.$router.push({
+        path: `/in-game?id=${this.$route.query.id}&board=${this.$route.query.board}`,
+        append: true
+      })
+    })
   },
   methods: {
     confirm () {
       this.bereit = true
-      const id = this.$route.query.id
-      this.$socket.emit('confirm', id)
+      const playerId = this.$route.query.id
+      const boardId = this.$route.query.board
+      this.$socket.emit('confirm', playerId, boardId)
     }
   }
 }

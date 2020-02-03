@@ -11,14 +11,21 @@
 #loading {
   -webkit-animation: mover 2s infinite  alternate;
 }
+#question {
+  -webkit-animation: questionmove 0.6s infinite  alternate;
+}
+@-webkit-keyframes questionmove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-50px); }
-}
+}/* 
 @keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-50px); }
-}
+} */
 .center {
   display: block;
   margin-left: auto;

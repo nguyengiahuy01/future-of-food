@@ -5,7 +5,6 @@ async function checkEmptyBoard (models) {
       start: false // Just find board, die noch nicht gestartet hat
     }, raw: true
   })
-  console.log(checkEmptyBoard)
   if (checkEmptyBoard === null) {
     // If there 's no empty board (start = false), create new board
     const response = await model.create({

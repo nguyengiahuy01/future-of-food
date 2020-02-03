@@ -1,9 +1,10 @@
 <template>
   <q-page class="flex flex-center">
     <div class="column items-center">
-        <img src="~assets/island-grey-40.svg" id="loading" class="center" style="width: 400px; align: center">
+      <img src="~assets/island-grey-40.svg" id="loading" class="center" style="width: 400px; align: center">
       <div class="col">
-        <p class="column items-center"><q-spinner-pie color="primary" size="2em"/>&nbsp;<strong>Warten wir, bis die anderen kommen ...</strong></p>
+        <p class="column items-center"><q-spinner-pie color="primary" size="2em"/>&nbsp;
+        <strong>Warten wir, bis die anderen kommen ...</strong></p>
         <template v-for='(item, index) in $store.state.showcase.players'>
         <q-chip :key='index' icon="favorite" color="primary" text-color="white"><strong>{{ item.name }}</strong></q-chip>
       </template></div>
@@ -13,11 +14,6 @@
 <script>
 export default {
   name: 'setRound',
-  data () {
-    return {
-      uri: './loading.svg'
-    }
-  },
   mounted () {
     const id = this.$route.query.id
     this.$socket.emit('join-room', id)

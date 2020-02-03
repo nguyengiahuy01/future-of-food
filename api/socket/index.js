@@ -10,8 +10,8 @@ const socket = function (io, models) {
     socket.on('in-room', id => {
       inRoom(socket, models, id)
     })
-    socket.on('confirm', id => {
-      confirm(socket, models, id)
+    socket.on('confirm', (playerId, boardId) => {
+      confirm(socket, models, playerId, boardId)
     })
   })
 }

@@ -18,7 +18,6 @@ router.post('/test', async (req, res) => {
     include: [{ model: _models.users.favorite }],
     raw: true
   })
-  console.log(response)
   res.status(200).end()
 })
 module.exports = router;
