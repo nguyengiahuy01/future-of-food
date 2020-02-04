@@ -5,8 +5,15 @@ module.exports = [
     explanation: "Die Insel versucht, sich auf den Entwicklungsweg der Gesellschaft und Wirtschaft zu einigen und holt die Meinungen der Bewohner ein. Vorzugsweise soll der Weg…",
     group: 0,
     answers: {
-      0: "einer durchschnittlich guten Entwicklung eingeschlagen werden.",
-      1: "einer nachhaltigeren Entwicklung eingeschlagen werden."
+      0: {
+        label: "einer durchschnittlich guten Entwicklung eingeschlagen werden.",
+        explanation: ""
+      },
+      1: {
+        label: "einer nachhaltigeren Entwicklung eingeschlagen werden.",
+        explanation: ""
+      },
+      2: null
     }
   },
   {

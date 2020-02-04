@@ -1,7 +1,7 @@
 <template>
 <q-page class="center">
   <h4>{{ title }}</h4>
-    <div class="row justify-center">
+  <div class="row justify-center">
       <div class="col-6">
         <img
             src="~assets/island-grey.svg"
@@ -38,7 +38,8 @@
           <q-card-actions align="right">
             <q-btn flat round color="red" icon="info" />
             <q-btn flat round color="teal" icon="info" />
-            <q-btn flat round color="primary" icon="panorama_fish_eye" />
+            <q-btn v-if="answer == 0" flat round color="primary" icon="check_circle"/>
+            <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="answer = 0"/>
           </q-card-actions>
           <q-card-section horizontal>{{ answer1 }}</q-card-section>
         </q-card><br>
@@ -46,7 +47,8 @@
           <q-card-actions align="right">
             <q-btn flat round color="red" icon="info" />
             <q-btn flat round color="teal" icon="info" />
-            <q-btn flat round color="primary" icon="panorama_fish_eye" />
+            <q-btn v-if="answer == 1" flat round color="primary" icon="check_circle"/>
+            <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="answer = 1"/>
           </q-card-actions>
           <q-card-section>{{ answer2 }}</q-card-section>
         </q-card>
@@ -59,7 +61,9 @@ export default {
   name: 'in Game',
   data () {
     return {
+      voteResult: false,
       second: 100,
+      answer: null,
       title: 'SOZIOÖKONOMISCHE ENTWICKLUNG',
       question: 'Die Landwirte der Insel merken, dass die Frischwassernutzung besser reguliert und effektiver genutzt werden muss, um vor allem in der Landwirtschaft Verbesserungen zu erreichen. Die Insel muss sich auf eine Kombination verschiedener Maßnahmen, bzw. Herangehensweise, einigen.',
       answer1: 'Verbesserung der Technologien um 75% und der wie gewohnten Vermeidung von Lebensmittelverschwendung.',
@@ -70,7 +74,6 @@ export default {
     }
   },
   mounted () {
-    console.log('Nguyen')
     this.second -= 1
   },
   watch: {
@@ -79,7 +82,7 @@ export default {
         this.second -= 5
       }, 1000)
     }
-  }/* ,
+  }/*
   async mounted () {
     const playerId = this.$route.query.id
     const boardId = this.$route.query.board
