@@ -32,57 +32,50 @@
         />
         </div>
       </div>
-      <div class="col-6">
-        <strong style="margin-top:40px">{{ question }}</strong><br><br><br>
-        <q-card class="my-card" id="question">
-          <q-card-actions align="right">
-            <q-btn flat round color="red" icon="info" />
-            <q-btn flat round color="teal" icon="info" />
-            <q-btn v-if="answer == 0" flat round color="primary" icon="check_circle"/>
-            <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="answer = 0"/>
-          </q-card-actions>
-          <q-card-section horizontal>{{ answer1 }}</q-card-section>
-        </q-card><br>
-        <q-card class="my-card" id="question">
-          <q-card-actions align="right">
-            <q-btn flat round color="red" icon="info" />
-            <q-btn flat round color="teal" icon="info" />
-            <q-btn v-if="answer == 1" flat round color="primary" icon="check_circle"/>
-            <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="answer = 1"/>
-          </q-card-actions>
-          <q-card-section>{{ answer2 }}</q-card-section>
-        </q-card>
-      </div>
+      <question/>
+      <modalReady @resetTime="resetTime"/>
     </div>
 </q-page>
 </template>
 <script>
+import question from './question'
+import modalReady from './modalReady'
 export default {
   name: 'in Game',
+  components: {
+    question,
+    modalReady
+  },
   data () {
     return {
-      voteResult: false,
       second: 100,
-      answer: null,
       title: 'SOZIOÖKONOMISCHE ENTWICKLUNG',
-      question: 'Die Landwirte der Insel merken, dass die Frischwassernutzung besser reguliert und effektiver genutzt werden muss, um vor allem in der Landwirtschaft Verbesserungen zu erreichen. Die Insel muss sich auf eine Kombination verschiedener Maßnahmen, bzw. Herangehensweise, einigen.',
-      answer1: 'Verbesserung der Technologien um 75% und der wie gewohnten Vermeidung von Lebensmittelverschwendung.',
-      answer2: 'Eine weitere Reduzierung der Lebensmittelverschwendung um 50% und einem Fortschritt in der Technologie.',
-      value: 10,
-      myself: {},
-      choosen: null
+      value: 10
     }
   },
   mounted () {
-    this.second -= 1
+    this.second -= 5
   },
   watch: {
     second (val) {
-      setTimeout(() => {
-        this.second -= 5
-      }, 1000)
+      if (val === 0) { // Het thoi gian tra loi
+        this.endQuestion()
+      } else {
+        setTimeout(() => {
+          this.second -= 5
+        }, 1000)
+      }
     }
-  }/*
+  },
+  methods: {
+    endQuestion () {
+      this.$store.state.inGame.ready = true
+    },
+    resetTime () {
+      this.second = 100
+    }
+  }
+  /*
   async mounted () {
     const playerId = this.$route.query.id
     const boardId = this.$route.query.board

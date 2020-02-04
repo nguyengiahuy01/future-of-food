@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 // we first import the module
-import showcase from './showcase'
+import showcase from './showCase'
+import inGame from './inGame'
 
 Vue.use(Vuex)
 
@@ -10,7 +11,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       // then we reference it
-      showcase
+      showcase,
+      inGame
     },
 
     // enable strict mode (adds overhead!)
