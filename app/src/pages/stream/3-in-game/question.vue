@@ -1,6 +1,6 @@
 <template>
       <div class="col-6">
-        <strong style="margin-top:40px">{{ $store.state.inGame.question }}</strong><br><br><br>
+        <strong style="margin-top:40px">{{ $store.state.inGame.questionData.question }}</strong><br><br><br>
         <!-- Question 01 ________________ -->
         <q-card class="my-card" id="question">
           <q-card-actions align="right">
@@ -12,13 +12,15 @@
             <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
                 <q-banner class="bg-brown text-white">
                 <template v-slot:avatar><q-icon name="info"/></template>
-                {{ $store.state.inGame.answers[0].explanation }}
+                {{ $store.state.inGame.questionData.answers[0] == null ? 'None': $store.state.inGame.questionData.answers[0].explanation }}
                 </q-banner>
             </q-popup-proxy>
             </q-icon>
             <!---->
           </q-card-actions>
-          <q-card-section horizontal>{{ $store.state.inGame.answers[0].label }}</q-card-section>
+          <q-card-section horizontal>
+            {{ $store.state.inGame.questionData.answers[0] == null ? 'None': $store.state.inGame.questionData.answers[0].label }}
+          </q-card-section>
         </q-card><br>
         <!-- Question 02 ________________ -->
         <q-card class="my-card" id="question">
@@ -31,13 +33,13 @@
             <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
                 <q-banner class="bg-brown text-white">
                 <template v-slot:avatar><q-icon name="info"/></template>
-                {{ $store.state.inGame.answers[1].explanation }}
+                {{ $store.state.inGame.questionData.answers[1] == null ? 'None': $store.state.inGame.questionData.answers[1].explanation }}
                 </q-banner>
             </q-popup-proxy>
             </q-icon>
             <!---->
           </q-card-actions>
-          <q-card-section>{{ $store.state.inGame.answers[1].label }}</q-card-section>
+          <q-card-section>{{ $store.state.inGame.questionData.answers[0] == null ? 'None': $store.state.inGame.questionData.answers[0].label }}</q-card-section>
         </q-card>
         <!-- Question 03 ________________ -->
       </div>
