@@ -13,5 +13,6 @@ export default {
     2: null
   },
   answer: null,
-  ready: false
+  ready: false,
+  userReady: 0
 }

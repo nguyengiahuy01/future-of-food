@@ -14,7 +14,7 @@
           font-size="16px"
           size="60px"
           class="center"
-          :value="value"
+          :value="round"
           :thickness="0.4"
           color="primary"
           track-color="grey-3"
@@ -24,7 +24,7 @@
           font-size="16px"
           size="60px"
           class="center"
-          :value="second"
+          :value="timer"
           :thickness="0.4"
           color="primary"
           track-color="grey-3"
@@ -41,28 +41,30 @@
 import question from './question'
 import modalReady from './modalReady'
 export default {
-  name: 'in Game',
+  name: 'inGame',
   components: {
     question,
     modalReady
   },
   data () {
     return {
-      second: 100,
+      seconds: 10,
+      valueTimer: 100,
+      timer: 100,
       title: 'SOZIOÖKONOMISCHE ENTWICKLUNG',
-      value: 10
+      round: 10
     }
   },
   mounted () {
-    this.second -= 5
+    this.timer -= (this.valueTimer / this.seconds)
   },
   watch: {
-    second (val) {
+    timer (val) {
       if (val === 0) { // Het thoi gian tra loi
         this.endQuestion()
       } else {
         setTimeout(() => {
-          this.second -= 5
+          this.timer -= (this.valueTimer / this.seconds)
         }, 1000)
       }
     }
@@ -72,7 +74,7 @@ export default {
       this.$store.state.inGame.ready = true
     },
     resetTime () {
-      this.second = 100
+      this.timer = 100
     }
   }
   /*

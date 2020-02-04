@@ -5,7 +5,7 @@ module.exports = [
     explanation: "Die Insel versucht, sich auf den Entwicklungsweg der Gesellschaft und Wirtschaft zu einigen und holt die Meinungen der Bewohner ein. Vorzugsweise soll der Weg…",
     group: 0,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "einer durchschnittlich guten Entwicklung eingeschlagen werden.",
         explanation: "Die Entwicklung und Einkommenswachstum bleibt weiter ungleichmäßig, wodurch nachhaltige Entwicklungsziele langsamer erreicht werden. Dabei geht die technologische Entwicklung weiter, jedoch ohne Durchbruch und zudem ist die Population auf fossile Brennstoffe angewiesen. "
@@ -41,7 +41,7 @@ module.exports = [
     explanation: "",
     group: 1,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "Düngen mit Stickstoffhaltigen Düngemitteln",
         explanation: "Pflanzen können diese Art von Düngemittel schneller aufnehmen, da sie wasserlöslich sind. Pflanzen sind resistenter und geschützter von Wetterbedingungen und Insektenbefall welche eine Veränderung und Beeinflussung des Ökosystems verursacht. Bei hohem pH-Wert ensteht Ammoniak. Dies belastet Gewässer was Fischsterben zufolge hat. Teile des Stickstoffs wird in Lachgas umgewandelt wodurch starkes Treibhausgas entsteht."
@@ -62,7 +62,7 @@ module.exports = [
         label: "Guidelines Diet - inklusive tierischer Produkte",
         explanation: "Die Guidelines Diet wirkt sich auf die Umwelt so aus, dass höhere Treibhausemissionen durch Rindhaltung erzeugt werden. Dabei wird der Verbrauch von zusätzlichem Platz für den Anbau von Futter und dessen Bewässerung erfordert."
         },
-      1: null
+      1: null,
       2: {
         label: "Flexitarian Diet - größtenteils Gemüse, Obst, Hülsenfrüchte und Nüsse",
         explanation: "Diese Ernährungsweise hat einen kleineren ökologischen Fußabdruck. Die Grundnahrungsmittel sind Kartoffeln und Hülsenfrüchte. Der Gesamteinfluss auf die Umwelt ist höher."
@@ -75,7 +75,7 @@ module.exports = [
     explanation: "Die Bewohner der Insel müssen sich in einem gemeinsamen Treffen darüber einigen, in was in nächste Zeit mehr investiert werden soll.",
     group: 4,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "Verbesserung der Technologien",
         explanation: "Diese Wahl bedeutet, bessere und effizientere Wassernutzung und -lagerung. Dabei wird die Ackernutzung in Bezug auf Landwirtschaft verbessert, also auch Düngemittel."
@@ -93,7 +93,7 @@ module.exports = [
     explanation: "Durch einen Stromausfall, haben die Kühlungen der Supermärkte und der privaten Haushalte nicht funktioniert. Massen an Nahrung, vor allem Fleisch, musste weggeschmissen werden. Dies hat die Bewohner auf die generelle Lebensmittelverschwendung aufmerksam gemacht.",
     group: 5,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "Lebensmittelproduktion um 50% reduzieren.",
         explanation: "Es ist zwar wichtig, dass die Lebensmittelverschwendung minimiert wird, dies hat aber keinen großen Einfluss auf die Gesamtlage."
@@ -111,7 +111,7 @@ module.exports = [
     explanation: "Bedenke: Jede Anbaufläche sollte einen gewissen Nutzen haben.",
     group: 3,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "Futtermittel",
         explanation: "Futtermittel sind hauptsächlich für die Tiere. Die Tiere bekommen somit gut-angebautes Futter."
@@ -134,8 +134,7 @@ module.exports = [
         explanation: "Wird die Lebensmittelverschwendung reduziert, wird der Ertrag der Population geringer."
         },
 
-      1: null
-
+      1: null,
       2: {
         label: "Verbesserung der Technologien um 75% und der wie gewohnten Vermeidung von Lebensmittelverschwendung.",
         explanation: "Mit der verbesserten Technologien können die Inselbewohner bessere Maßnahmen zur Regulierung des Umwelts übernehmen. Überschüssige Lebensmittel können an weitere Bewohner gegeben werden, wodurch die Population wachsen kann."
@@ -148,8 +147,7 @@ module.exports = [
     explanation: "Beide Nahrungsressourcen haben verschiedene Vorteile.",
     group: 3,
     answers: {
-      0: null
-
+      0: null,
       1: {
         label: "Obst und Gemüse",
         explanation: "Der Anbau von Obst und Gemüse ist deutlich effizienter und belastet die Umwelt kaum. Jedoch sind die Nährwertstoffe nicht so hoch wie die der Hülsenfrüchte. Die Wassernutzung ist allerdings höher."
@@ -176,7 +174,6 @@ module.exports = [
         label: "Fleisch von benachbarten Inseln importieren.",
         explanation: "Der Import von Fleisch kann deutlich umweltfreundlicher für die Insel sein, ist allerdings teurer und hat eine mittelmäßige Effizienz für die Inselbewohner zufolge.. "
         },
-
       2: null
     }
   }
