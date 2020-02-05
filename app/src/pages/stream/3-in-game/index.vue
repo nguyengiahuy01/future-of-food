@@ -1,6 +1,8 @@
 <template>
 <q-page class="center">
-  <h4>{{ title }}</h4>
+  <h4>
+    {{ $store.state.inGame.questions }}
+  </h4>
   <div class="row justify-center">
       <div class="col-6">
         <img
@@ -14,7 +16,7 @@
           font-size="16px"
           size="60px"
           class="center"
-          :value="round"
+          :value="roundUI"
           :thickness="0.4"
           color="primary"
           track-color="grey-3"
@@ -32,7 +34,7 @@
         />
         </div>
       </div>
-      <question/>
+      <question v-if="$store.getters['inGame/questionsLength'] > 0"/>
       <modalReady @resetTime="resetTime"/>
     </div>
 </q-page>
@@ -51,12 +53,13 @@ export default {
       seconds: 10,
       valueTimer: 100,
       timer: 100,
-      title: 'SOZIOÖKONOMISCHE ENTWICKLUNG',
-      round: 10
+      roundUI: 10
     }
   },
-  mounted () {
+  async mounted () {
     this.timer -= (this.valueTimer / this.seconds)
+    const boardId = this.$route.query.board
+    this.$store.state.inGame.questions = (await this.$api.patch('game/questions', { boardId })).data
   },
   watch: {
     timer (val) {
@@ -77,23 +80,5 @@ export default {
       this.timer = 100
     }
   }
-  /*
-  async mounted () {
-    const playerId = this.$route.query.id
-    const boardId = this.$route.query.board
-    this.myself = (await this.$api.patch('/game/myself', {
-      id: this.$route.query.id
-    })).data
-    this.$socket.emit('in-room', id)
-    this.$socket.on(`in-room/${boardId}/self`, data => {
-      this.$store.state.showcase.players = data
-    })
-    this.$socket.on(`in-room/${boardId}/friend`, data => {
-      this.$store.state.showcase.players = data
-    })
-    this.$socket.on('go-home', function () {
-      this.$router.push({ path: `/`, append: true })
-    })
-  } */
 }
 </script>

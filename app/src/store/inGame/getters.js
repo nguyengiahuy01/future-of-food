@@ -1,6 +1,6 @@
-const playersSum = (state) => {
-  return state.players.length
+const questionsLength = (state) => {
+  return state.questions.length
 }
 module.exports = {
-  playersSum
+  questionsLength
 }

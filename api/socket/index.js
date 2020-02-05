@@ -13,6 +13,9 @@ const socket = function (io, models) {
     socket.on('confirm', (playerId, boardId) => {
       confirm(socket, models, playerId, boardId)
     })
+    socket.on('add-new-round', (boardId) => {
+      addNewRound(socket, models, boardId)
+    })
   })
 }
 module.exports = socket

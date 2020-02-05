@@ -1,3 +1,21 @@
+const Fragen = require('../database/questions')
+function createRandomQuestion () {
+  const questions = []
+  const standardQuestion = 10
+  const numberOfQuestions = Fragen.length - 1
+  while (true) {
+    const randomAddress = Math.floor(Math.random() * (numberOfQuestions - 0 + 1) + 0)
+    const rand = Fragen[randomAddress]
+    const index = questions.findIndex(x => x.id === rand.id)
+    if (index === -1) {
+      questions.push(rand)
+    }
+    if (questions.length === standardQuestion) {
+      break
+    }
+  }
+  return questions
+}
 module.exports = async function joinRoom (socket, models, id) {
   // When someone come into game, he bringt id
   // 1. Get Player 's Information
@@ -23,6 +41,19 @@ module.exports = async function joinRoom (socket, models, id) {
         { where: { boardId, id: player.id }}
       )
     }
+    const questions = createRandomQuestion()
+    for (const question of questions) {
+      await models.game.question.create({
+        questionid: question.id,
+        positiv: 0,
+        netral: 0,
+        negativ: 0,
+        group: question.group,
+        boardId
+      })
+    }
+    // Set questions
+    //
     socket.emit('join-room/ready', boardId)
     socket.broadcast.emit('join-room/ready', boardId)
   }

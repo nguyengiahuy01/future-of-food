@@ -1,8 +1,8 @@
 async function myself (req, res, models) {
   try {
-    const id = req.body.id
-    const response = await models.game.player.findOne({
-      where: { id },
+    const boardId = req.body.boardId
+    const response = await models.game.questions.findAll({
+      where: { boardId },
       raw: true
     })
     res.end(JSON.stringify(response))
