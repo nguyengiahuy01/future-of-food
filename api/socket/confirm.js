@@ -15,6 +15,10 @@ module.exports = async function inRoom (socket, models, playerId, boardId) {
   if (readyNumber === 5) {
     socket.emit(`next`)
     socket.broadcast.emit(`next`)
+    await models.game.player.update(
+      { ready: false },
+      { where: { boardId }}
+    )
   } else {
     socket.emit(`ready`, readyNumber)
     socket.broadcast.emit(`ready`, readyNumber)
