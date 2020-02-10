@@ -1,10 +1,11 @@
 <template>
   <div class="col-6">
     <strong style="margin-top:40px">
-      Cau hoi
+      {{ $store.state.inGame.questions[$store.state.inGame.round].value.question }}
     </strong><br><br><br>
     <!-- Question 01 ________________ -->
-    <q-card class="my-card" id="question">
+    <q-card class="my-card" id="question"
+            v-if="$store.state.inGame.questions[$store.state.inGame.round].value.answers[0] != null">
       <q-card-actions align="right">
         <q-btn v-if="$store.state.inGame.answer == 0" flat round color="primary" icon="check_circle"/>
         <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="$store.state.inGame.answer = 0"/>
@@ -13,18 +14,19 @@
           <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
             <q-banner class="bg-brown text-white">
             <template v-slot:avatar><q-icon name="info"/></template>
-            Info
+            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[0].explanation }}
             </q-banner>
           </q-popup-proxy>
         </q-icon>
             <!---->
           </q-card-actions>
           <q-card-section horizontal>
-            Info
+            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[0].label }}
           </q-card-section>
         </q-card><br>
         <!-- Question 02 ________________ -->
-        <q-card class="my-card" id="question">
+        <q-card class="my-card" id="question"
+                v-if="$store.state.inGame.questions[$store.state.inGame.round].value.answers[1] != null">
           <q-card-actions align="right">
             <q-btn v-if="$store.state.inGame.answer == 1" flat round color="primary" icon="check_circle"/>
             <q-btn v-else flat round color="primary" icon="panorama_fish_eye"
@@ -34,17 +36,37 @@
             <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
                 <q-banner class="bg-brown text-white">
                 <template v-slot:avatar><q-icon name="info"/></template>
-                Info
+                {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[1].explanation }}
                 </q-banner>
             </q-popup-proxy>
             </q-icon>
             <!---->
           </q-card-actions>
           <q-card-section>
-            Info
+            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[1].label }}
           </q-card-section>
         </q-card>
         <!-- Question 03 ________________ -->
+        <q-card class="my-card" id="question"
+            v-if="$store.state.inGame.questions[$store.state.inGame.round].value.answers[2] != null">
+      <q-card-actions align="right">
+        <q-btn v-if="$store.state.inGame.answer == 0" flat round color="primary" icon="check_circle"/>
+        <q-btn v-else flat round color="primary" icon="panorama_fish_eye" @click="$store.state.inGame.answer = 0"/>
+        <!---->
+        <q-icon name="info" class="text-teal cursor-pointer">
+          <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
+            <q-banner class="bg-brown text-white">
+            <template v-slot:avatar><q-icon name="info"/></template>
+            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[2].explanation }}
+            </q-banner>
+          </q-popup-proxy>
+        </q-icon>
+            <!---->
+          </q-card-actions>
+          <q-card-section horizontal>
+            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[2].label }}
+          </q-card-section>
+        </q-card><br>
       </div>
 </template>
 <script>
