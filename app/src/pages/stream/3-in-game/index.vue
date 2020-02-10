@@ -1,7 +1,7 @@
 <template>
 <q-page class="center">
   <h4>
-    {{ $store.state.inGame.questions }}
+    {{ $store.state.inGame.questions[$store.state.inGame.round].value.thema }}
   </h4>
   <div class="row justify-center">
       <div class="col-6">
@@ -50,7 +50,7 @@ export default {
   },
   data () {
     return {
-      seconds: 10,
+      seconds: 20,
       valueTimer: 100,
       timer: 100,
       roundUI: 10
@@ -78,6 +78,7 @@ export default {
     },
     resetTime () {
       this.timer = 100
+      this.$store.state.inGame.round = this.$store.state.inGame.round + 1
     }
   }
 }
