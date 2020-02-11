@@ -7,7 +7,8 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'start', component: () => import('pages/stream/1-start') },
       { path: 'introdution', component: () => import('pages/stream/2-introdution') },
-      { path: 'in-game', component: () => import('pages/stream/3-in-game/index') }
+      { path: 'in-game', component: () => import('pages/stream/3-in-game/index') },
+      { path: 'finish', component: () => import('pages/stream/4-finish/index') }
     ]
   }
 ]
@@ -19,5 +20,4 @@ if (process.env.MODE !== 'ssr') {
     component: () => import('pages/Error404.vue')
   })
 }
-
 export default routes
