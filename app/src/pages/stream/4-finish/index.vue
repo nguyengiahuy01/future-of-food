@@ -9,6 +9,7 @@
       />
       <br/>
       <h4> End, thanks </h4>
+      <q-btn @click="$osc.run()">Test</q-btn>
     </div>
   </q-page>
 </template>
