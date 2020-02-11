@@ -16,7 +16,7 @@
           font-size="16px"
           size="60px"
           class="center"
-          :value="roundUI"
+          :value="$store.state.inGame.roundUI"
           :thickness="0.4"
           color="primary"
           track-color="grey-3"
@@ -52,8 +52,7 @@ export default {
     return {
       seconds: 20,
       valueTimer: 100,
-      timer: 100,
-      roundUI: 10
+      timer: 100
     }
   },
   async mounted () {
@@ -78,7 +77,6 @@ export default {
     },
     resetTime () {
       this.timer = 100
-      this.$store.state.inGame.round = this.$store.state.inGame.round + 1
     }
   }
 }

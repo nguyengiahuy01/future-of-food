@@ -51,6 +51,9 @@ export default {
     })
     this.$socket.on('next', () => {
       this.reset()
+      if (this.$store.state.inGame.roundUI === 100) {
+        this.$router.push({ path: `/finish`, append: true })
+      }
     })
   },
   methods: {
@@ -59,6 +62,8 @@ export default {
       this.bereit = false
       this.$store.state.inGame.ready = false
       this.$store.state.inGame.userReady = 0
+      this.$store.state.inGame.round = this.$store.state.inGame.round + 1
+      this.$store.state.inGame.roundUI = this.$store.state.inGame.roundUI + 10
     },
     confirm () {
       this.bereit = true
