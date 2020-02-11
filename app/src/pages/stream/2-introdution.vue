@@ -1,6 +1,7 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="q-pa-md" style="max-width: 400px">
+    <div class="q-pa-md" style="min-width:700px; max-width:700px">
+      <div>
       <q-carousel
         v-model="slide"
         transition-prev="scale"
@@ -10,30 +11,40 @@
         navigation
         padding
         arrows
+        thumbnails
         control-color="black"
-        height="300px"
+        height="400px"
+        width="700px"
         class="rounded-borders"
       >
         <!-- Slide 1 -->
-        <q-carousel-slide name="style" class="column no-wrap flex-center">
-          <q-icon name="style" size="56px" />
-          <div class="q-mt-md text-center">{{ text1 }}</div>
+        <q-carousel-slide name="1" class="column no-wrap flex-center">
+          <q-icon name="language" size="56px"/>
+          <div class="q-mt-md text-center"><h6>{{ text1 }}</h6></div>
         </q-carousel-slide>
-        <!-- Slide 1 -->
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <q-icon name="live_tv" size="56px" />
-          <div class="q-mt-md text-center">{{ text2 }}</div>
+        <!-- Slide 2 -->
+        <q-carousel-slide name="2" class="column no-wrap flex-center">
+          <q-icon name="donut_small" size="56px" />
+          <div class="q-mt-md text-center"><h6>{{ text2 }}</h6></div>
         </q-carousel-slide>
-        <!-- Slide 1 -->
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <q-icon name="layers" size="56px" />
-          <div class="q-mt-md text-center">{{ text3 }}</div>
+        <!-- Slide 3 -->
+        <q-carousel-slide name="3" class="column no-wrap flex-center">
+          <q-icon name="face" size="56px" />
+          <div class="q-mt-md text-center"><h6>{{ text3 }}</h6></div>
+        </q-carousel-slide>
+        <!-- Slide 4 -->
+        <q-carousel-slide name="4" class="column no-wrap flex-center">
+          <q-icon name="eco" size="56px" />
+          <div class="q-mt-md text-center"><h6>{{ text4 }}</h6></div>
         </q-carousel-slide>
         <!-- end -->
       </q-carousel>
+      </div>
+      <div>
       <h6 class="q-mt-md text-center">{{ $store.state.showcase.ready }}/5</h6>
       <q-btn v-if="bereit" label="Ich bin bereit!" color="primary" style="width: 100%" disabled />
-      <q-btn v-else label="Ich bin bereit!" color="primary" style="width: 100%" @click="confirm()" />
+      <q-btn v-else label="Ich bin bereit!" color="primary" style="width: 100%" @click="confirm()"/>
+      </div>
     </div>
   </q-page>
 </template>
@@ -42,11 +53,11 @@ export default {
   name: 'chooseRole',
   data () {
     return {
-      slide: 'style',
+      slide: '1',
       bereit: false,
       text1: 'Die Welt, wie wir sie kennen existiert so nicht mehr.',
       text2: 'Durch mehrere vorangegangene Krisen und Ereignisse, sind mehrere Teile der Erde abgebrochen. Die Ökosysteme der verschiedenen Erdteile sind aber immer noch miteinander verbunden.',
-      text3: 'Die Bewohner der einzelnen “Inselstaaten” arbeiten nun daran, eine stabile Umwelt zu generieren und müssen Hand in Hand arbeiten.'
+      text3: 'Die Bewohner der einzelnen “Inselstaaten” arbeiten nun daran, eine stabile Umwelt zu generieren und müssen Hand in Hand arbeiten.',
       text4: 'Helfe ihnen, ihre und unser aller Umwelt zu erhalten!'
     }
   },
@@ -71,3 +82,9 @@ export default {
   }
 }
 </script>
+<style>
+.q-card {
+  width: 500px;
+  margin: 30px
+}
+</style>

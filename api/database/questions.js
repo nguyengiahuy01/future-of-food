@@ -183,7 +183,7 @@ module.exports = [
     explanation: "Analysen belegen, dass nur eine Kombination von Maßnahmen dazu führen, dass unser Ernährungssystem die Grenzen unseres Planeten nicht sprengen. Treibhausgasemissionen können nicht ohne eine Ernährungsumstellung minimiert werden; Verbesserungen in Technologien tragen maßgeblich zur Ackerland- und Wassernutzung und deren Effizienz bei; alle Maßnahmen regulieren die Phosphor- und Stickstoffwerte",
     group: 4,
     answers: {
-      0: null
+      0: null,
       1: {
         label: "Es soll sich immer auf eine Maßnahme (Technologie, Diät, Wassernutzung...) konzentriert und bestmöglich ausgeführt werden, um eine ganzheitliche Verbesserung zu erreichen",
         explanation: ""
@@ -191,30 +191,33 @@ module.exports = [
       2: {
         label: "Um eine ganzheitliche Verbesserung zu erreichen, müssen verschiedene Maßnahmen gleichzeitig ergriffen werden.",
         explanation: ""
-        },
-    {
-      id: 12,
-      question: "Die Insel hat, bedingt durch eine schlechte Ernte, einen Tomaten-Engpass. Das alljährliche Tomaten-Fest steht nun vor der Tür und die Bewohner müssen beratschlagen, was getan werden soll.",
-      explanation: "Regionale und saisonale Lebensmittel sind ein besonders starker Faktor bei der nachhaltigen Gestaltung der Ernährung. Dadurch werden weitaus weniger Schadstoffe ausgestoßen, da lange Transportwege und die damit einhergehenden Schadstoffe vermieden werden können.",
-      group: 3,
-      answers: {
-        0: null
-        1: {
-          label: "Tomaten können von einem anderen Inselstaat importiert werden",
+        }
+    },
+  },
+  {
+    id: 12,
+    question: "Die Insel hat, bedingt durch eine schlechte Ernte, einen Tomaten-Engpass. Das alljährliche Tomaten-Fest steht nun vor der Tür und die Bewohner müssen beratschlagen, was getan werden soll.",
+    explanation: "Regionale und saisonale Lebensmittel sind ein besonders starker Faktor bei der nachhaltigen Gestaltung der Ernährung. Dadurch werden weitaus weniger Schadstoffe ausgestoßen, da lange Transportwege und die damit einhergehenden Schadstoffe vermieden werden können.",
+    group: 3,
+    answers: {
+      0: null,
+      1: {
+        label: "Tomaten können von einem anderen Inselstaat importiert werden",
           explanation: ""
           },
         2: {
           label: "Ein Verzicht auf das Tomaten-Fest und stattdessen regionales Gemüse feiern",
           explanation: ""
-          },
-      },
+          }
+      }
+    },
       {
         id: 13,
         question: "Im Zuge des Trends, immer mehr auf tierische Produkte zu verzichten, hat sich eine Gruppe von Inselbewohnern zusammengetan und bearbeitet immer mehr Leute, durch aktives Ansprechen und Beurteilen, es ihnen gleichzutun. Sollte dies in der Öffentlichkeit weiter unterstützt werden?",
         explanation: "Eine Veränderung in unserer Ernährung hin zu mehr Nachhaltigkeit, ist unumgänglich, um eine Verbesserung der Umwelt zu erreichen. Allerdings ist “Food-Shaming” nicht der richtige Weg, sondern bewirkt meist Gegenteiliges. Zumal eine nachhaltige Ernährung nicht gleich totalen Verzicht bedeutet.",
         group: 2,
         answers: {
-          0: null
+          0: null,
           1: {
             label: "Absolut! Es ist wichtig, dass andere Menschen aktiv auf ihre Ernährung angesprochen werden und zum Umdenken bewegt werden",
             explanation: ""
@@ -222,15 +225,16 @@ module.exports = [
           2: {
             label: "Nein, nicht so.",
             explanation: ""
-            },
-        },
+            }
+        }
+      },
         {
           id: 14,
           question: "Damit sich die Bewohner der Insel nachhaltiger und gesünder ernähren, muss…",
           explanation: "Eine Veränderung hin zu einer pflanzlichen Ernährung ist einerseits nachweislich gesünder und andererseits umweltfreundlicher. Allerdings ist ein kompletter Verzicht nicht notwendig, sondern lediglich eine Regulierung und Reduzierung von Fleischkonsum, vor allem rotem Fleisch, und Milchprodukten.",
           group: 2,
           answers: {
-            0: null
+            0: null,
             1: {
               label: "sich jeder mit Fleischkonsum besser regulieren.",
               explanation: ""
@@ -238,8 +242,9 @@ module.exports = [
             2: {
               label: "am besten gänzlich auf Fleisch verzichtet werden.",
               explanation: ""
-              },
-          },
+              }
+          }
+        },
           {
             id: 15,
             question: "Die Insel hat durch eine nachhaltige Ernährung und umweltfreundliches Handeln große Fortschritte, vor allem in der Technologie, gemacht. Die Bewohner beratschlagen, ob sich mit anderen Inselstaaten zusammengetan werden sollte.",
@@ -250,12 +255,13 @@ module.exports = [
                 label: "Nein, jeder soll eigene Fortschritte machen und diese finden.",
                 explanation: ""
                 },
-              1: null
+              1: null,
               2: {
                 label: "Ja, es ist wichtig, weniger starken Inselstaaten zu helfen.",
                 explanation: ""
-                },
-            },
+                }
+            }
+          },
             {
               id: 16,
               question: "Die Inselbewohner erfordern neue Maßnahmen bezüglich der hohen Viehhaltung. Dazu gibt es zwei Lösungen:",
@@ -266,12 +272,13 @@ module.exports = [
                   label: "Fleischkonsum erhöhen.",
                   explanation: "Fleisch als Nahrungsmittel hat einen kürzeren Lebenszyklus und gelangt damit schneller im Abfall."
                   },
-                1: null
+                1: null,
                 2: {
                   label: "Milcherzeugnisse erhöhen.",
                   explanation: "Milcherzeugnisse verursacht weniger CO2 und hat einen höheren Lebenspann für die Inselbewohner, da es weniger schnell verdirbt und somit im Müll landet."
-                  },
-              },
+                  }
+              }
+            },
               {
                 id: 17,
                 question: "Die Inselbewohner möchten sich für den Winter wappnen und überlegen, welche Heizmittel am sinnvollsten wäre um sich im Eigenheim warm zu halten.",
@@ -287,7 +294,8 @@ module.exports = [
                     explanation: "Öl- und Gasheizungen sind gängigere Heizsysteme. Die CO2-Bilanz von diesen Heizsystemen ist zwar höher, aber ressourcenschonender."
                     },
                   2: null
-                },
+                }
+              },
                 {
                   id: 18,
                   question: "Innerhalb der Regionen auf der Insel wird der Handel betrieben. Um den Handel auszubauen, möchten die Inselbewohner bessere Verkehrswege und -mittel erschaffen. Jedoch reichen die Ressourcen nur für den Ausbau eines Transportwegs aus.",
@@ -303,8 +311,6 @@ module.exports = [
                       explanation: ""
                       },
                     2: null
-                  },
-                  {
-                    },
+                  }
   }
 ]
