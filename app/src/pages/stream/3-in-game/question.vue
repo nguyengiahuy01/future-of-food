@@ -14,7 +14,7 @@
           <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
             <q-banner class="bg-brown text-white">
             <template v-slot:avatar><q-icon name="info"/></template>
-            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[0].explanation }}
+            <div class="explanation">{{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[0].explanation }}</div>
             </q-banner>
           </q-popup-proxy>
         </q-icon>
@@ -36,7 +36,7 @@
             <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
                 <q-banner class="bg-brown text-white">
                 <template v-slot:avatar><q-icon name="info"/></template>
-                {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[1].explanation }}
+                <div class="explanation">{{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[1].explanation }}</div>
                 </q-banner>
             </q-popup-proxy>
             </q-icon>
@@ -57,7 +57,7 @@
           <q-popup-proxy transition-show="flip-up" transition-hide="flip-down">
             <q-banner class="bg-brown text-white">
             <template v-slot:avatar><q-icon name="info"/></template>
-            {{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[2].explanation }}
+            <div class="explanation">{{ $store.state.inGame.questions[$store.state.inGame.round].value.answers[2].explanation }}</div>
             </q-banner>
           </q-popup-proxy>
         </q-icon>
@@ -74,3 +74,8 @@ export default {
   name: 'question'
 }
 </script>
+<style>
+.explanation {
+  max-width: 500px
+}
+</style>
