@@ -15,7 +15,6 @@ module.exports = async function (req, res, models) {
     }
     res.end(JSON.stringify(questions))
   } catch (error) {
-    console.log(error)
     res.status(400).end()
   }
 }

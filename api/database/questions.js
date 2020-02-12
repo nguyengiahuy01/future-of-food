@@ -7,13 +7,15 @@ module.exports = [
       "Es gibt verschiedene Prognosen bzw. Richtungen, wie wir uns sozioökonomisch entwickeln könnten. SSP1, eine sogenannte “Middle-of-the-road”-Entwicklung,  eine durchschnittliche Entwicklung der Sozioökonomie, die nicht schlecht ist aber auch keine technologischen Durchbrüche erzielt oder umweltfreundlich ist. SSP2 hingegen, “the green-road”, beschreibt eine viel positivere und umweltfreundlichere Entwicklung, bei der auch das menschliche Wohlbefinden eine Rolle spielt.",
     group: 0,
     answers: {
+      // Negativ
       0: null,
+      // Neutral
       1: {
         label: "Durchschnittlich guten Entwicklung einschlagen.",
         explanation:
           "Die Entwicklung und Einkommenswachstum bleibt weiter ungleichmäßig, wodurch nachhaltige Entwicklungsziele langsamer erreicht werden. Dabei geht die technologische Entwicklung weiter, jedoch ohne Durchbruch und zudem ist die Population auf fossile Brennstoffe angewiesen. "
       },
-
+      // Positive
       2: {
         label: "Nachhaltigere Entwicklung einschlagen.",
         explanation:

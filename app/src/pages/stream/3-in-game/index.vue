@@ -35,7 +35,7 @@
         </div>
       </div>
       <question v-if="$store.getters['inGame/questionsLength'] > 0"/>
-      <modalReady @resetTime="resetTime"/>
+      <modalReady @resetTime="resetTime" @questionExplanation="questionExplanation"/>
     </div>
 </q-page>
 </template>
@@ -52,18 +52,20 @@ export default {
     return {
       seconds: 20,
       valueTimer: 100,
-      timer: 100
+      timer: 100,
+      questionExplanation: ''
     }
   },
   async mounted () {
     this.timer -= (this.valueTimer / this.seconds)
     const boardId = this.$route.query.board
+    this.questionExplanation = this.$store.state.inGame.questions
     this.$store.state.inGame.questions = (await this.$api.patch('game/questions', { boardId })).data
   },
   watch: {
     timer (val) {
       if (val === 0) { // Het thoi gian tra loi
-        this.endQuestion()
+        this.$store.state.inGame.ready = true
       } else {
         setTimeout(() => {
           this.timer -= (this.valueTimer / this.seconds)
@@ -72,9 +74,6 @@ export default {
     }
   },
   methods: {
-    endQuestion () {
-      this.$store.state.inGame.ready = true
-    },
     resetTime () {
       this.timer = 100
     }

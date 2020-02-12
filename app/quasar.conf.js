@@ -10,9 +10,7 @@ module.exports = function (ctx) {
       'axios',
       'socket',
       'loading',
-      'notify',
-      'parse',
-      'osc'
+      'notify'
     ],
     store: [],
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
