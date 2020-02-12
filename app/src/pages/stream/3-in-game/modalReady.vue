@@ -2,8 +2,20 @@
   <q-dialog v-model="$store.state.inGame.ready" persistent>
     <q-card>
       <q-card-section>
-        <div class="text-h6">Vielen Dank für deine Antwort</div>
-        <div class="text-subtitle2">Hier sind die Ergebnisse von den anderen Spielern:</div><br>
+        <div class="text-h6" align="center">Vielen Dank für deine Antwort</div><br>
+        {{ $store.state.inGame.questions[$store.state.inGame.round].value.explanation }}<br><hr><br>
+        <div align="center">
+          <q-icon v-if="$store.state.inGame.answer === 2" name="sentiment_very_satisfied" size="56px" color="primary"/>
+          <q-icon v-else name="sentiment_very_satisfied" size="56px" disabled/>&nbsp;
+          <!---->
+          <q-icon v-if="$store.state.inGame.answer === 1" name="sentiment_satisfied" size="56px" color="primary"/>
+          <q-icon v-else name="sentiment_satisfied" size="56px" disabled/>&nbsp;
+          <!---->
+          <q-icon v-if="$store.state.inGame.answer === 0 || $store.state.inGame.answer === null"
+                  name="mood_bad" size="56px" color="primary"/>
+          <q-icon v-else name="mood_bad" size="56px" disabled/>
+        </div><br>
+        <div class="text-subtitle2" align="center">Hier sind die Ergebnisse von den anderen Spielern</div><br>
         <!---->
         <q-linear-progress size="25px" :value="positivAns" color="teal">
         <div class="absolute-full flex flex-center">
@@ -23,8 +35,9 @@
         </div>
         </q-linear-progress><br>
         <!---->
+        {{ questionExplanation }}
       </q-card-section>
-      <q-card-actions align="right">
+      <q-card-actions align="center">
         <q-chip color="primary" text-color="white" icon="emoji_emotions">
           {{ $store.state.inGame.userReady }}/5
         </q-chip>
@@ -37,10 +50,13 @@
 <script>
 export default {
   name: 'modalReady',
+  props: {
+    questionExplanation: Object
+  },
   data () {
     return {
       bereit: false,
-      positivAns: 0.3,
+      positivAns: 0.2,
       neutralAns: 0.1,
       negativAns: 0.5
     }
@@ -74,3 +90,8 @@ export default {
   }
 }
 </script>
+<style>
+.answer {
+  align: center;
+}
+</style>
