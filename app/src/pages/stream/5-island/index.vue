@@ -1,8 +1,8 @@
 <template>
-<div>
-    <img src="~assets/0.gif" v-if="status === 0" style="background-size: cover;"/>
-    <img src="~assets/1.gif" v-if="status === 1" style="background-size: cover;"/>
-    <img src="~assets/2.gif" v-if="status === 2" style="background-size: cover;"/>
+<div id="container">
+    <img src="~assets/0.gif" v-bind:style="{opacity: img0}"/>
+    <img id="img1" src="~assets/1.gif" v-bind:style="{opacity: img1}"/>
+    <img id="img2" src="~assets/2.gif" v-bind:style="{opacity: img2}"/>
 </div>
 </template>
 <script>
@@ -10,7 +10,9 @@ export default {
   name: 'Insel',
   data () {
     return {
-      status: 1
+      img0: 0,
+      img1: 1,
+      img2: 0
     }
   },
   mounted () {
@@ -20,18 +22,9 @@ export default {
   },
   methods: {
     changeStatus (data) {
-      let punkt = 0
-      const positiv = data.positiv
-      const negativ = data.negativ
-      punkt = punkt - negativ
-      punkt = punkt + positiv
-      if (punkt === 0) {
-        this.status = 1
-      } else if (punkt > 0) {
-        this.status = 2
-      } else if (punkt < 0) {
-        this.status = 0
-      }
+      this.img0 = data.negativ * 0.2
+      this.img1 = data.neutral * 0.2
+      this.img2 = data.positiv * 0.2
     }
   }
 }
@@ -40,5 +33,18 @@ export default {
 .inselBk {
   background-repeat: no-repeat;
   background-size: auto;
+}
+#container {
+    position:relative;
+}
+#img1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#img2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 </style>
