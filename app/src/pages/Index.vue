@@ -1,5 +1,6 @@
 <template>
   <q-page class="flex flex-center">
+    <q-btn @click="$q.fullscreen.toggle()" round flat/>
     <div class="q-pa-md" style="max-width: 400px">
       <img
         src="~assets/island-grey.svg"

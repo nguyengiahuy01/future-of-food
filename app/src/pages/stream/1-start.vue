@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex flex-center fullscreen">
     <div class="column items-center">
       <img src="~assets/island-grey-40.svg" id="loading" class="center" style="width: 400px; align: center">
       <div class="col">
