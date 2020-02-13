@@ -346,7 +346,7 @@ module.exports = [
       "Die Inselbewohner möchten sich für den Winter wappnen und überlegen, welche Heizmittel am sinnvollsten wäre um sich im Eigenheim warm zu halten.",
     explanation:
       "Treibhausgase aus der Massentierhaltung sind überwiegend Methan, das Wiederkäuer wie Rinder in ihren Mägen produzieren, und Lachgas, das durch stickstoffhaltige Dünger freigesetzt wird. In Deutschland stammten 2016 rund 59 % der gesamten Methan- und 80 % der Lachgas-Emissionen aus der Land- und dabei weitestgehend aus der Tierwirtschaft. Beides sind extrem klimaschädliche Gase: Methan ist rund 25-mal und Lachgas rund 300-mal klimaschädlicher als CO2.",
-    group: 7,
+    group: 0,
     answers: {
       0: {
         label: "Brennholz",
