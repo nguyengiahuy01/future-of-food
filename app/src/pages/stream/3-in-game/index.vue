@@ -39,7 +39,7 @@ export default {
     }
   },
   async mounted () {
-    this.timer -= (this.valueTimer / this.seconds)
+    // this.timer -= (this.valueTimer / this.seconds)
     const boardId = this.$route.query.board
     this.questionExplanation = this.$store.state.inGame.questions
     this.$store.state.inGame.questions = (await this.$api.patch('game/questions', { boardId })).data

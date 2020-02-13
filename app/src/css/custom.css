@@ -27,7 +27,6 @@
 .inGame_insel { width: 350px; margin: 40px; }
 .inGame_questionTitle { margin: 50px; }
 .inGame_question { margin: 50px; }
-.inGame_answerCard { margin: 50px; }
 .inGame_round { margin: 50px; }
 .inGame_seconds { margin: 50px; }
 
@@ -37,9 +36,7 @@
     background-color: lightblue;
   } */
   .inGame_insel { position: absolute; width: 300px; left: 10px; top: 150px; }
-  .inGame_questionTitle { max-width: 350px; min-width: 350px; margin-left: 350px; }
-  .inGame_question { max-width: 350px; min-width: 350px; margin-left: 350px; }
-  .inGame_answerCard { max-width: 350px; min-width: 350px; left: 350px; }
+  .inGame_questionPart { position: absolute; max-width: 350px; min-width: 350px; left: 350px; }
   .inGame_round { position: absolute; width: 40px; left: 100px; }
   .inGame_seconds { position: absolute; width: 40px; left: 200px; }
 }

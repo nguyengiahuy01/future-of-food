@@ -234,12 +234,12 @@ module.exports = [
       1: {
         label:
           "Es soll sich immer auf eine Maßnahme (Technologie, Diät, Wassernutzung...) konzentriert und bestmöglich ausgeführt werden, um eine ganzheitliche Verbesserung zu erreichen",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       2: {
         label:
           "Um eine ganzheitliche Verbesserung zu erreichen, müssen verschiedene Maßnahmen gleichzeitig ergriffen werden.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       }
     }
   },
@@ -254,12 +254,12 @@ module.exports = [
       0: null,
       1: {
         label: "Tomaten können von einem anderen Inselstaat importiert werden",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       2: {
         label:
           "Ein Verzicht auf das Tomaten-Fest und stattdessen regionales Gemüse feiern",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       }
     }
   },
@@ -275,11 +275,11 @@ module.exports = [
       1: {
         label:
           "Absolut! Es ist wichtig, dass andere Menschen aktiv auf ihre Ernährung angesprochen werden und zum Umdenken bewegt werden",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       2: {
         label: "Nein, nicht so.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       }
     }
   },
@@ -294,11 +294,11 @@ module.exports = [
       0: null,
       1: {
         label: "sich jeder mit Fleischkonsum besser regulieren.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       2: {
         label: "am besten gänzlich auf Fleisch verzichtet werden.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       }
     }
   },
@@ -312,12 +312,12 @@ module.exports = [
     answers: {
       0: {
         label: "Nein, jeder soll eigene Fortschritte machen und diese finden.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       1: null,
       2: {
         label: "Ja, es ist wichtig, weniger starken Inselstaaten zu helfen.",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       }
     }
   },
@@ -373,11 +373,11 @@ module.exports = [
     answers: {
       0: {
         label: "Den Wasservekehr erhöhen und Hafen ausbauen",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       1: {
         label: "Mehr Straßen und mehr Fahrzeuge für Transport",
-        explanation: ""
+        explanation: "Keine Erklärung vorhanden"
       },
       2: null
     }
