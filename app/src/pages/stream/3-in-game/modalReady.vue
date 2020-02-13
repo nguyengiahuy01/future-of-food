@@ -41,7 +41,7 @@
         <q-chip color="primary" text-color="white" icon="emoji_emotions">
           {{ $store.state.inGame.userReady }}/5
         </q-chip>
-        <q-btn label="Ich bin bereits! Auf nächste Frage" color="primary" @click="confirm()" :disable="bereit" flat/>
+        <q-btn label="Ich bin bereit für die nächste Frage" color="primary" @click="confirm()" :disable="bereit"/>
       </q-card-actions>
       <q-linear-progress indeterminate color="warning" class="q-mt-sm" />
     </q-card>

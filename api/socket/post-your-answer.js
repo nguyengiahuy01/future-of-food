@@ -22,7 +22,8 @@ module.exports = async function (socket, models, data) {
         where,
         raw: true
     }))
-    console.log(result)
+    socket.emit(`update-island`, result)
+    socket.broadcast.emit('update-island', result)
     socket.emit(`see-answer`, result)
     socket.broadcast.emit(`see-answer`, result)
 }

@@ -8,7 +8,8 @@ const routes = [
       { path: 'start', component: () => import('pages/stream/1-start') },
       { path: 'introdution', component: () => import('pages/stream/2-introdution') },
       { path: 'in-game', component: () => import('pages/stream/3-in-game/index') },
-      { path: 'finish', component: () => import('pages/stream/4-finish/index') }
+      { path: 'finish', component: () => import('pages/stream/4-finish/index') },
+      { path: 'island', component: () => import('pages/stream/5-island/index') }
     ]
   }
 ]

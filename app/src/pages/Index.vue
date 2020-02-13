@@ -42,6 +42,9 @@ export default {
       name: ''
     }
   },
+  mounted () {
+    //
+  },
   methods: {
     async start () {
       try {

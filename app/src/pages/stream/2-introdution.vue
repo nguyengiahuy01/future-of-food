@@ -82,9 +82,3 @@ export default {
   }
 }
 </script>
-<style>
-.q-card {
-  width: 500px;
-  margin: 30px
-}
-</style>
