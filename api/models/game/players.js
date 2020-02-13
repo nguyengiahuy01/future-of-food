@@ -12,7 +12,7 @@ const player = sequelize.define(`player`, {
     online: Sequelize.BOOLEAN, // Ob der Nutzer noch bleibt
     onGame: Sequelize.BOOLEAN, // Ob der Nutzer noch nicht gewählt wird
     joinBoard: Sequelize.BOOLEAN // Player is waiting or has joined board ?
-}, {
+}/* , {
     schema: 'game'
-})  
+} */)  
 module.exports = player

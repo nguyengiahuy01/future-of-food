@@ -8,8 +8,8 @@
         style="width: 400px; align: center"
       />
       <br/>
-      <h4> End, thanks </h4>
-      <q-btn>Test</q-btn>
+      <b>{{ text }}</b><br><br>
+      <q-btn @click="$router.push({ path: `/`, append: true })" color="primary ">Neues Spiel</q-btn>
     </div>
   </q-page>
 </template>
@@ -19,7 +19,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      name: ''
+      text: 'Danke für die Mithilfe! Die Inselbewohner haben mehr Bewusstsein darüber bekommen, was es heißt, auf die eigene Umwelt achtzugeben, was alles an unserem Ernährungssystem hängt und dass jeder Einzelne seinen Teil dazu beiträgt, wie es uns und unserer Natur geht. Vielleicht hast auch du etwas davon mitnehmen können.'
     }
   }
 }

@@ -7,7 +7,7 @@ const board = sequelize.define(`board`, {
     start: Sequelize.BOOLEAN,
     round: Sequelize.INTEGER, // round 1, 2, 3, 4
     closed: Sequelize.BOOLEAN
-}, {
+}/* , {
     schema: 'game'
-})
+} */)
 module.exports = board

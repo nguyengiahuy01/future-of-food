@@ -56,9 +56,9 @@ export default {
   data () {
     return {
       bereit: false,
-      positivAns: 0.2,
-      neutralAns: 0.1,
-      negativAns: 0.5
+      positivAns: 0,
+      neutralAns: 0,
+      negativAns: 0
     }
   },
   async mounted () {
@@ -70,6 +70,11 @@ export default {
       if (this.$store.state.inGame.roundUI === 100) {
         this.$router.push({ path: `/finish`, append: true })
       }
+    })
+    this.$socket.on('see-answer', (result) => {
+      this.positivAns = result.positiv * 0.2
+      this.neutralAns = result.neutral * 0.2
+      this.negativAns = result.negativ * 0.2
     })
   },
   methods: {

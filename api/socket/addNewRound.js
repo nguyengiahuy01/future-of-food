@@ -11,4 +11,3 @@ module.exports = async function (socket, models, boardId) {
     socket.emit(`add-new-round`, round)
     socket.broadcast.emit(`add-new-round`, round)
   }
-    

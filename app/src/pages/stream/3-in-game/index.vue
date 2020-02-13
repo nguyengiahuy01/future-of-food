@@ -1,42 +1,24 @@
 <template>
-<q-page class="center">
-  <h4>
-    {{ $store.state.inGame.questions[$store.state.inGame.round].value.thema }}
-  </h4>
-  <div class="row justify-center">
-      <div class="col-6">
-        <img
-            src="~assets/island-grey.svg"
-            id="loading"
-            class="flex flex-center"
-            style="width: 350px; margin-top:40px"
-        />
-        <div class="row">
-        <q-circular-progress
-          font-size="16px"
-          size="60px"
-          class="center"
-          :value="$store.state.inGame.roundUI"
-          :thickness="0.4"
-          color="primary"
-          track-color="grey-3"
-          style="margin-top: 20px"
-        />
-        <q-circular-progress
-          font-size="16px"
-          size="60px"
-          class="center"
-          :value="timer"
-          :thickness="0.4"
-          color="primary"
-          track-color="grey-3"
-          style="margin-top: 20px"
-        />
-        </div>
-      </div>
-      <question v-if="$store.getters['inGame/questionsLength'] > 0"/>
-      <modalReady @resetTime="resetTime" @questionExplanation="questionExplanation"/>
-    </div>
+<q-page>
+  <img src="~assets/island-grey.svg" id="loading" class="inGame_insel"/>
+  <q-circular-progress
+    class="inGame_round"
+    :value="$store.state.inGame.roundUI"
+    :thickness="0.4"
+    color="primary"
+    size="60px"
+    track-color="grey-3"
+  />
+  <q-circular-progress
+    class="inGame_seconds"
+    :value="timer"
+    :thickness="0.4"
+    color="primary"
+    size="60px"
+    track-color="grey-3"
+  />
+  <question v-if="$store.getters['inGame/questionsLength'] > 0"/>
+  <modalReady @resetTime="resetTime" @questionExplanation="questionExplanation"/>
 </q-page>
 </template>
 <script>
@@ -63,8 +45,14 @@ export default {
     this.$store.state.inGame.questions = (await this.$api.patch('game/questions', { boardId })).data
   },
   watch: {
-    timer (val) {
+    async timer (val) {
       if (val === 0) { // Het thoi gian tra loi
+        // Post cau hoi
+        await this.$socket.emit('post-your-answer', {
+          boardId: this.$route.query.board,
+          questionid: this.$store.state.inGame.questions[this.$store.state.inGame.round].value.id,
+          answer: this.$store.state.inGame.answer
+        })
         this.$store.state.inGame.ready = true
       } else {
         setTimeout(() => {
