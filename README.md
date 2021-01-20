@@ -1,5 +1,7 @@
 # future-of-food
 
-Edith, Burhan, Huys
-test
-test
+## Installation
+1. Install NPM Packages
+  ```sh
+  npm install
+  ```
